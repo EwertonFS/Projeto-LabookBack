@@ -1,3 +1,5 @@
+
+
 # Projeto-LabookBack
 
 ## Requesitos
@@ -29,6 +31,8 @@ Ao passar o id de um post, você deve obter as informações a respeito daquele 
 + Lembre-se de que o Backend deve ser muito conciso. Isso significa que você deve prever a maior parte dos erros que possam acontecer e já se precaver contra eles. (Não se preocupe muito com essa parte, mas, se der tempo, foque nisso!)
 
 ## Tabelas
+![labookTablePost](https://user-images.githubusercontent.com/94709800/210089182-3cdc6f00-d1c3-4d8b-9dc8-8154600c1bd9.png)
+![labookTableUser](https://user-images.githubusercontent.com/94709800/210089183-3cde12a9-266c-4191-8539-3508905885ce.png)
 
 
 ## Bibliotecas
@@ -40,6 +44,7 @@ Ao passar o id de um post, você deve obter as informações a respeito daquele 
 + uuid
 + typescript
 + mysql
++ Rest
 
 
 
