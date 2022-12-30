@@ -28,4 +28,18 @@ Ao passar o id de um post, você deve obter as informações a respeito daquele 
 
 + Lembre-se de que o Backend deve ser muito conciso. Isso significa que você deve prever a maior parte dos erros que possam acontecer e já se precaver contra eles. (Não se preocupe muito com essa parte, mas, se der tempo, foque nisso!)
 
+## Tabelas
+
+
+## Bibliotecas
++ bcryptjs
++ cors 
++ express
++ jsonwebToken
++ knex
++ uuid
++ typescript
++ mysql
+
+
 
