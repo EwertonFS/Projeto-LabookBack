@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { PostBusiness } from "../business/PostBusiness";
 import { Post } from "../model/Post";
 import { createPostInputDTO } from "../types/createPostInputDTO";
+import { getPostByIdInputDTO } from "../types/getPostByIdinputDTO";
 
 export class PostController {
   createPost = async (req: Request, res: Response) => {
@@ -29,7 +30,11 @@ export class PostController {
     try {
       let message = "Success!";
 
-      const { id } = req.params;
+      
+
+      const input :getPostByIdInputDTO = {
+        id: req.params.id
+      }
 
       const post : Post = await new PostBusiness().getPostById(input)
 

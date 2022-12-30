@@ -1,15 +1,17 @@
 export default class User{
-    static email(password: string, email: any): boolean | PromiseLike<boolean> {
-        throw new Error("Method not implemented.");
-    }
-    static id: string;
-    getters: any;
     constructor(
         private id:string,
         private name:string,
         private email:string,
         private password :string
     ){}
+        // tentativa de ultilizacao do id e password da classe na user business quando tipo a var user com User
+    // public getPassword() {
+    //     return this.password
+    //     }
+    // public getId() {
+    //     return this.id
+    //     }
 }
 
 

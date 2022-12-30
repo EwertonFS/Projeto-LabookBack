@@ -1,7 +1,28 @@
+//Cdastrando funciona perfeiramente
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name":"joao",
+    "email":"joao@gmail.com",
+    "password":"12345678"
+}
+
+
+//token do joao
+# "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0OTYzNDA5LTI1NDMtNDJhYi1iZThjLTA4Mjc5YTI4MzM3ZCIsImlhdCI6MTY2Njg3NDY4MCwiZXhwIjoxNjY2ODc2MTIwfQ.C8IPoEjp2JHzypC9RkvwvWU4TjkueWn9V1PVX4aA4Yw"
+
+
+////Erro está sempre mandando msg de sucesso independente do email esta cadastrado , e sem msg de token
+###
 POST http://localhost:3003/user/login
 Content-Type: application/json
 
 {
-    "email":"marshall@email.com",
+    "email":"joao@email.com",
     "password":"12345678"
 }
+
+
+
+

@@ -4,11 +4,10 @@ import { Authenticator } from "../services/Authenticator";
 import { IdGenerator } from "../services/IdGenerator";
 import { authenticationData } from "../types/authData";
 import { createPostInputDTO } from "../types/createPostInputDTO";
+import { getPostByIdInputDTO } from "../types/getPostByIdinputDTO";
 
 export class PostBusiness {
-  getPostById(input: any): Post {
-      throw new Error("Method not implemented.");
-  }
+  
   async createUser(input: createPostInputDTO) {
     try {
       //validando o token
@@ -38,10 +37,11 @@ export class PostBusiness {
     }
   }
 
-  async getUserById(input: getPostByIdInputDto) {
+  async getPostById(input: getPostByIdInputDTO) {
     try {
-        const post: Post = await new PostaDatabase().getPostById(input.id)
+        const post: Post = await new PostData().getPostById(input.id)
 
+        //customizar melhor o erro
       if (!post) {
          throw new Error("post not found");
       }

@@ -22,7 +22,10 @@ const userController = new UserController(
 app.post("/user/signup", userController.signup)
 app.post("/user/login",userController.login)
 
+
+
+
 const postController = new PostController()
 
 app.post("/post/create",postController.createPost)
-app.get("/post/:id",postController.createPost)
+app.get("/post/:id",postController.getPostById)

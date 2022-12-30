@@ -8,12 +8,16 @@ import { SignupInputDTO } from "../types/signupInputDTO";
 
 export default class UserBusiness{
     
-
+    //injenção de dependencia
+    // quais metotodos o Userbusineess necessita
+    //depois add this 
+    //instanciar na rota 
     constructor(
         private userData:UserData,
         private idGenerator:IdGenerator,
         private hashManager:HashManager,
         private authenticator:Authenticator
+        
     ){}
 
     signup = async (input:SignupInputDTO) =>{
@@ -56,25 +60,29 @@ export default class UserBusiness{
                 throw new Error("email and password must be provided")
             }
 
-            const registerUser = await this.userData.findByEmail(input.email)
+           // toda vez que altero a func por getUserByEmail da erro de classe 
+            //não consigo instanciar ou tipar para User , a var user
+           
+            const user = await this.userData.findByEmail(input.email)
             
-            if(!registerUser){
+            if(!user){
                 throw new Error("Invalid credentials")
             }
            
             
 
-            const passwordIsCorrect:boolean = await this.hashManager.compare(input.password,registerUser.password)
+            const passwordIsCorrect:boolean = await this.hashManager.compare(input.password,user.password)
 
             if(!passwordIsCorrect){
-                throw new Error("Invalid Crendentials")
+                throw new Error("password Incorrect")
 
             }
 
-            const token :string = this.authenticator.generateToken({id:registerUser.id})
+            const token :string = this.authenticator.generateToken({id:user.id})
 
             return token
-        } catch (error) {
+        } catch (error:any) {
+            throw new Error(error.message)
             
         }
         

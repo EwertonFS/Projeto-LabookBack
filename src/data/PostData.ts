@@ -29,7 +29,7 @@ export class PostData extends BaseDatabase {
             const result: any = await this.connection("labook_posts")
             .select("*")
             .where({ id });
-
+            //spo quero o primeiro post
             return toPostModel(result[0])
             
         } catch (error:any) {
